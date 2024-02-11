@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@700&display=swap');
+
+/*font-family: 'DynaPuff', system-ui;*/
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Poppins', sans-serif;
+	box-sizing: border-box;
+}
+
+button:focus, input:focus, textarea:focus {
+	outline: 0;
+}
+
+body {
+	background: #E7F8FE;
+}
+
+/*#f59831*/
+
+.profile_card_wrap {
+	width: 345px;
+	margin: 0px auto;
+	border: 1px solid #f59831;
+	border-radius: 5px;
+	padding: 20px;
+}
+
+.profile_card_wrap img {
+	width: 100%;
+    height: 170px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.profile_card_wrap .profile_social {
+	text-align: center;
+	padding: 10px 0;
+}
+
+.profile_card_wrap .profile_social a {
+	width: 35px;
+	height: 35px;
+	border: 1px solid #f59831;
+	border-radius: 50%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	color: #f59831;
+	text-decoration: none;
+	margin: 0 4px;
+	transition: .3s;
+}
+
+.profile_card_wrap .profile_social a:hover {
+	background: #f59831;
+	color: #ffffff;
+}
+
+.profile_card_wrap .profile_sub_text {
+	border-left: 4px solid #f59831;
+	padding-left: 10px;
+}
+.profile_card_wrap .profile_sub_text p a {
+	color: #000000 !important;
+	text-decoration: none;
+}
+
+/* .profile_card_wrap .make-btn {
+	width: 100%;
+	height: 45px;
+	border-radius: 5px;
+	background: #f59831;
+	color: #ffffff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	text-decoration: none;
+	margin-top: 20px;
+} */

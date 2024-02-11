@@ -1,0 +1,10 @@
+.logInForm {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: url(https://img.freepik.com/premium-vector/full-color-gradient-abstract-background-orange-backgrounds-vector-illustration_542898-61.jpg)
+    center no-repeat;
+  background-size: cover;
+}

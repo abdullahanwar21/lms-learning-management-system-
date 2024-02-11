@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+.main {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(https://png.pngtree.com/background/20210716/original/pngtree-simple-gradient-fashion-background-picture-image_1334185.jpg)
+  center no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+
+h1 span {
+  color: #ff8600;
+}
+.formBody {
+  background: rgba( 255, 255, 255, 0.35 );
+  backdrop-filter: blur( 8px );
+  -webkit-backdrop-filter: blur( 8px );
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  margin-top: 20px !important;
+}
+.signUpBtn {
+  background-color: #ff8600 !important;
+}

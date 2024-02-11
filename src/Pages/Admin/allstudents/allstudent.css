@@ -1,0 +1,19 @@
+.studentInfo {
+  /* background-color: aqua !important; */
+  background: rgba( 255, 255, 255, 0.7 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 20px );
+  -webkit-backdrop-filter: blur( 20px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  margin: 8px 0px;
+  cursor: pointer;
+  padding: 10px;
+}
+.studentInfo:hover {
+  border: 2px solid #f59831;
+}  
+h4{
+    font-weight: 600 !important;
+    margin: auto 0px !important;
+}

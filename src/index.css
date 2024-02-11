@@ -1,0 +1,14 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+:root{
+  --primary-color : #ebf2fa;
+  --secondary-color : #ff8600;
+}
+body {
+  background-color: var(--primary-color) !important;
+}
+

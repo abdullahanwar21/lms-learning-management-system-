@@ -1,0 +1,105 @@
+.card {
+    display: flex;
+    /* position: relative; */
+    flex-direction: column;
+    height: 350px;
+    width:auto;
+    outline: none;
+    min-width: 250px;
+    padding: 1rem;
+    border-radius: 16px;
+    /* background: #17141d; */
+    /* background: linear-gradient(90deg,#ff8a00,#e52e71); */
+    box-shadow: -1rem 0 3rem #00000067;
+    transition: .2s;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+  }
+  
+  .card-author {
+    position: relative;
+    display: grid;
+    grid-template-columns: 75px 1fr;
+    align-items: center;
+    margin: 3rem 0 0;
+  }
+  
+  .author-name {
+    color: #000;
+    font-weight: 600;
+  }
+  
+  .author-name-prefix {
+    color: #000;
+    font-weight: 200;
+  }
+  
+  .author-avatar span {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(90deg,#ff8a00,#e52e71);
+    margin: 16px 10px;
+  }
+  
+  .half-circle {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 48px;
+    fill: none;
+    stroke: #e52e71;
+    stroke-width: 8;
+    stroke-linecap: round;
+  }
+  
+  .card-header {
+    margin-bottom: auto;
+    color: #000;
+  }
+  
+  .card-header p {
+    font-size: 14px;
+    margin: 0 0 1rem;
+    color: #000;
+  }
+  
+  .card-header .title {
+    font-size: 25px;
+    margin: .25rem 0 auto;
+    color: #000;
+    cursor: pointer;
+    font-family: 'Arial Black', sans-serif;
+  }
+  
+  .card-header .title:hover {
+    background: linear-gradient(90deg,#ff8a00,#e52e71);
+    text-shadow: none;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .tags {
+    margin: 1rem 0 2rem;
+    padding: .5rem 0 1rem;
+    line-height: 2;
+    margin-bottom: 0;
+    text-transform: capitalize;
+}
+
+.tags span {
+    font-style: normal;
+    font-weight: 700;
+    /* color: #ff8a00; */
+    color: #000;
+    font-size: .66rem;
+    border: 1px solid #e52e71;
+    border-radius: 2rem;
+    padding: .2rem .85rem .25rem;
+    margin: 0px 2px;
+    position: relative;
+    text-transform: capitalize;
+  }
