@@ -117,249 +117,254 @@ const AdmissionForm = () => {
 
   return (
     <>
-    <Box className="main">
-      <div class="container">
-        <div class="row">
-          <div class="offset-md-2 col-md-8 offset-md-2 formBody">
-            <h1 class="my-5" align="center">
-              Registration Form Of <span className="up">(LMS)</span>
-            </h1>
-            {error && (
-              <Alert variant="filled" severity="error" className="my-3">
-                {error}
-              </Alert>
-            )}
-            <Formik
-              initialValues={initialValues}
-              validationSchema={validationSchema}
-              onSubmit={handleAdmissionForm}
-            >
-              {(props) => (
-                <Form>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="mb-3">
-                        <Field
-                          as={TextField}
-                          id="outlined-basic"
-                          fullWidth
-                          label="First Name"
-                          variant="outlined"
-                          name="firstName"
-                          error={
-                            props.errors.firstName && props.touched.firstName
-                          }
-                          helperText={
-                            props.errors.firstName &&
-                            props.touched.firstName ? (
-                              <ErrorMessage name="firstName" />
-                            ) : null
-                          }
-                        />
+      <Box className="main">
+        <div class="container">
+          <div class="row">
+            <div class="offset-md-2 col-md-8 offset-md-2 formBody">
+              <h1 class="my-5" align="center">
+                Registration Form Of <span className="up">(LMS)</span>
+              </h1>
+              {error && (
+                <Alert variant="filled" severity="error" className="my-3">
+                  {error}
+                </Alert>
+              )}
+              <Formik
+                initialValues={initialValues}
+                validationSchema={validationSchema}
+                onSubmit={handleAdmissionForm}
+              >
+                {(props) => (
+                  <Form>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="mb-3">
+                          <Field
+                            as={TextField}
+                            id="outlined-basic"
+                            fullWidth
+                            label="First Name"
+                            variant="outlined"
+                            name="firstName"
+                            error={
+                              props.errors.firstName && props.touched.firstName
+                            }
+                            helperText={
+                              props.errors.firstName &&
+                              props.touched.firstName ? (
+                                <ErrorMessage name="firstName" />
+                              ) : null
+                            }
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="mb-3">
+                          <Field
+                            as={TextField}
+                            id="outlined-basic"
+                            fullWidth
+                            name="lastName"
+                            error={
+                              props.errors.lastName && props.touched.lastName
+                            }
+                            helperText={
+                              props.errors.lastName &&
+                              props.touched.lastName ? (
+                                <ErrorMessage name="lastName" />
+                              ) : null
+                            }
+                            label="Last Name"
+                            variant="outlined"
+                          />
+                        </div>
                       </div>
                     </div>
-                    <div class="col-md-6">
-                      <div class="mb-3">
+                    <div class="mb-3">
+                      <div>
                         <Field
                           as={TextField}
-                          id="outlined-basic"
+                          id="outlined-select-currency"
+                          select
+                          label="Select"
+                          defaultValue="SelectCourse"
+                          name="course"
                           fullWidth
-                          name="lastName"
-                          error={
-                            props.errors.lastName && props.touched.lastName
-                          }
+                          error={props.errors.course && props.touched.course}
                           helperText={
-                            props.errors.lastName && props.touched.lastName ? (
-                              <ErrorMessage name="lastName" />
+                            props.errors.course && props.touched.course ? (
+                              <ErrorMessage name="course" />
                             ) : null
                           }
-                          label="Last Name"
-                          variant="outlined"
-                        />
+                        >
+                          {courses.length > 0 ? (
+                            courses.map((course, index) => (
+                              <MenuItem key={index} value={course.courseName}>
+                                {course.courseName}
+                              </MenuItem>
+                            ))
+                          ) : (
+                            <MenuItem disabled></MenuItem>
+                          )}
+                        </Field>
                       </div>
                     </div>
-                  </div>
-                  <div class="mb-3">
-                    <div>
+                    <div class="mb-3">
                       <Field
                         as={TextField}
-                        id="outlined-select-currency"
-                        select
-                        label="Select"
-                        defaultValue="SelectCourse"
-                        name="course"
+                        id="outlined-basic"
                         fullWidth
-                        error={props.errors.course && props.touched.course}
+                        type="date"
+                        name="dateOfBirth"
+                        error={
+                          props.errors.dateOfBirth && props.touched.dateOfBirth
+                        }
                         helperText={
-                          props.errors.course && props.touched.course ? (
-                            <ErrorMessage name="course" />
+                          props.errors.dateOfBirth &&
+                          props.touched.dateOfBirth ? (
+                            <ErrorMessage name="dateOfBirth" />
+                          ) : (
+                            "Enter Date Of Birth"
+                          )
+                        }
+                        variant="outlined"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <Field
+                        as={TextField}
+                        id="outlined-basic"
+                        fullWidth
+                        label="Email"
+                        type="email"
+                        name="email"
+                        variant="outlined"
+                        error={props.errors.email && props.touched.email}
+                        helperText={
+                          props.errors.email && props.touched.email ? (
+                            <ErrorMessage name="email" />
                           ) : null
                         }
-                      >
-                        {courses.length > 0 ? (
-                          courses.map((course, index) => (
-                            <MenuItem key={index} value={course.courseName}>
-                              {course.courseName}
-                            </MenuItem>
-                          ))
-                        ) : (
-                          <MenuItem disabled></MenuItem>
-                        )}
-                      </Field>
+                      />
                     </div>
-                  </div>
-                  <div class="mb-3">
-                    <Field
-                      as={TextField}
-                      id="outlined-basic"
-                      fullWidth
-                      type="date"
-                      name="dateOfBirth"
-                      error={
-                        props.errors.dateOfBirth && props.touched.dateOfBirth
-                      }
-                      helperText={
-                        props.errors.dateOfBirth &&
-                        props.touched.dateOfBirth ? (
-                          <ErrorMessage name="dateOfBirth" />
-                        ) : "Enter Date Of Birth"
-                      }
-                      variant="outlined"
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <Field
-                      as={TextField}
-                      id="outlined-basic"
-                      fullWidth
-                      label="Email"
-                      type="email"
-                      name="email"
-                      variant="outlined"
-                      error={props.errors.email && props.touched.email}
-                      helperText={
-                        props.errors.email && props.touched.email ? (
-                          <ErrorMessage name="email" />
-                        ) : null
-                      }
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <Field
-                      as={TextField}
-                      id="outlined-basic"
-                      fullWidth
-                      type="file"
-                      name="image"
-                      inputRef={image}
-                      variant="outlined"
-                      // error={props.errors.image && props.touched.image}
-                      // helperText={
-                      //   props.errors.image && props.touched.image ? (
-                      //     <ErrorMessage name="image" />
-                      //   ) : null
-                      // }
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <FormControl fullWidth variant="outlined">
-                      <InputLabel htmlFor="outlined-adornment-password">
-                        Password
-                      </InputLabel>
+                    <div class="mb-3">
                       <Field
-                        as={OutlinedInput}
-                        id="outlined-adornment-password"
+                        as={TextField}
+                        id="outlined-basic"
                         fullWidth
-                        name="password"
-                        error={props.errors.password && props.touched.password}
-                        type={showPassword ? "text" : "password"}
-                        endAdornment={
-                          <InputAdornment position="end">
-                            <IconButton
-                              aria-label="toggle password visibility"
-                              onClick={handleClickShowPassword}
-                              onMouseDown={handleMouseDownPassword}
-                              edge="end"
-                            >
-                              {showPassword ? (
-                                <VisibilityOff />
-                              ) : (
-                                <Visibility />
-                              )}
-                            </IconButton>
-                          </InputAdornment>
-                        }
-                        label="Password"
+                        type="file"
+                        name="image"
+                        inputRef={image}
+                        variant="outlined"
+                        // error={props.errors.image && props.touched.image}
+                        // helperText={
+                        //   props.errors.image && props.touched.image ? (
+                        //     <ErrorMessage name="image" />
+                        //   ) : null
+                        // }
                       />
-                      <FormHelperText sx={{ color: "red" }}>
-                        {props.errors.password && props.touched.password ? (
-                          <ErrorMessage name="password" />
-                        ) : null}
-                      </FormHelperText>
-                    </FormControl>
-                  </div>
-                  <div class="mb-3">
-                    <FormControl fullWidth variant="outlined">
-                      <InputLabel htmlFor="outlined-adornment-password">
-                        Confirm Password
-                      </InputLabel>
-                      <Field
-                        as={OutlinedInput}
-                        name="confirmPassword"
-                        error={
-                          props.errors.confirmPassword &&
-                          props.touched.confirmPassword
-                        }
-                        id="outlined-adornment-password"
-                        fullWidth
-                        type={showPassword ? "text" : "password"}
-                        endAdornment={
-                          <InputAdornment position="end">
-                            <IconButton
-                              aria-label="toggle password visibility"
-                              onClick={handleClickShowPassword}
-                              onMouseDown={handleMouseDownPassword}
-                              edge="end"
-                            >
-                              {showPassword ? (
-                                <VisibilityOff />
-                              ) : (
-                                <Visibility />
-                              )}
-                            </IconButton>
-                          </InputAdornment>
-                        }
-                        label="Confirm Password"
-                      />
-                      <FormHelperText sx={{ color: "red" }}>
-                        {props.errors.confirmPassword &&
-                        props.touched.confirmPassword ? (
-                          <ErrorMessage name="confirmPassword" />
-                        ) : null}
-                      </FormHelperText>
-                    </FormControl>
-                  </div>
-                  <button
-                    type="submit"
-                    className="btn  text-light mb-3 col-md-12 signUpBtn"
-                    // disabled={loading}
-                  >
-                    {loading ? (
-                      <CircularProgress size={24} color="inherit" />
-                    ) : (
-                      "Submit"
-                    )}{" "}
-                  </button>
-                  {/* <span class="my-4 mx-2 text-decoration-none ml-2">
-                    Have An Account ?<a href="./login.html"> Log in</a>
-                  </span> */}
-                </Form>
-              )}
-            </Formik>
+                    </div>
+                    <div class="mb-3">
+                      <FormControl fullWidth variant="outlined">
+                        <InputLabel htmlFor="outlined-adornment-password">
+                          Password
+                        </InputLabel>
+                        <Field
+                          as={OutlinedInput}
+                          id="outlined-adornment-password"
+                          fullWidth
+                          name="password"
+                          error={
+                            props.errors.password && props.touched.password
+                          }
+                          type={showPassword ? "text" : "password"}
+                          endAdornment={
+                            <InputAdornment position="end">
+                              <IconButton
+                                aria-label="toggle password visibility"
+                                onClick={handleClickShowPassword}
+                                onMouseDown={handleMouseDownPassword}
+                                edge="end"
+                              >
+                                {showPassword ? (
+                                  <VisibilityOff />
+                                ) : (
+                                  <Visibility />
+                                )}
+                              </IconButton>
+                            </InputAdornment>
+                          }
+                          label="Password"
+                        />
+                        <FormHelperText sx={{ color: "red" }}>
+                          {props.errors.password && props.touched.password ? (
+                            <ErrorMessage name="password" />
+                          ) : null}
+                        </FormHelperText>
+                      </FormControl>
+                    </div>
+                    <div class="mb-3">
+                      <FormControl fullWidth variant="outlined">
+                        <InputLabel htmlFor="outlined-adornment-password">
+                          Confirm Password
+                        </InputLabel>
+                        <Field
+                          as={OutlinedInput}
+                          name="confirmPassword"
+                          error={
+                            props.errors.confirmPassword &&
+                            props.touched.confirmPassword
+                          }
+                          id="outlined-adornment-password"
+                          fullWidth
+                          type={showPassword ? "text" : "password"}
+                          endAdornment={
+                            <InputAdornment position="end">
+                              <IconButton
+                                aria-label="toggle password visibility"
+                                onClick={handleClickShowPassword}
+                                onMouseDown={handleMouseDownPassword}
+                                edge="end"
+                              >
+                                {showPassword ? (
+                                  <VisibilityOff />
+                                ) : (
+                                  <Visibility />
+                                )}
+                              </IconButton>
+                            </InputAdornment>
+                          }
+                          label="Confirm Password"
+                        />
+                        <FormHelperText sx={{ color: "red" }}>
+                          {props.errors.confirmPassword &&
+                          props.touched.confirmPassword ? (
+                            <ErrorMessage name="confirmPassword" />
+                          ) : null}
+                        </FormHelperText>
+                      </FormControl>
+                    </div>
+                    <button
+                      type="submit"
+                      className="btn  text-light mb-3 col-md-12 signUpBtn"
+                      // disabled={loading}
+                    >
+                      {loading ? (
+                        <CircularProgress size={24} color="inherit" />
+                      ) : (
+                        "Submit"
+                      )}{" "}
+                    </button>
+                    <span class="my-4 mx-2 text-decoration-none ml-2">
+                      Have An Account ?<a href="./login.html"> Log in</a>
+                    </span>
+                  </Form>
+                )}
+              </Formik>
+            </div>
           </div>
         </div>
-      </div>
-    </Box>
+      </Box>
     </>
   );
 };
