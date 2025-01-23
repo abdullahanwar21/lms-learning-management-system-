@@ -159,7 +159,7 @@ const Login = () => {
                       color: "blue",
                     }}
                   >
-                    Log in
+                    Signup
                   </a>
                 }
               </span>

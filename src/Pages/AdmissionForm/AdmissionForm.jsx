@@ -21,7 +21,7 @@ import {
   getAllData,
   signUpUser,
 } from "../../Config/Firebase/firebasemethods";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Loader from "../../Components/Loader/Loader";
 const AdmissionForm = () => {
   const [error, setIsError] = useState("");
@@ -355,8 +355,8 @@ const AdmissionForm = () => {
                         "Submit"
                       )}{" "}
                     </button>
-                    <span class="my-4 mx-2 text-decoration-none ml-2">
-                      Have An Account ?<a href="./login.html"> Log in</a>
+                    <span className="my-4 mx-2 text-decoration-none ml-2">
+                      Have An Account ?<Link to="/login">Log in</Link>
                     </span>
                   </Form>
                 )}
